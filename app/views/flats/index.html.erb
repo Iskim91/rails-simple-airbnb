@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row mt-2">
+    <div class="col-md-6"><h3 >Simple Airbnb</h3>
+    </div>
+    <div class="col-md-6 text-right"><%= link_to "Add a flat", new_flat_path, class: 'btn btn-outline-primary link-unstyled' %>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <h1>All our Flats</h1>
+    <p><%= "All #{@flats.count} flats" %></p>
+  </div>
+
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-xs-6 col-md-4 p-0">
+      <div class="card p-2 m-2 bg-light">
+        <div class="card-title">
+          <h3><%= flat.name %></h3>
+        </div>
+        <div class="card-body">
+<i class="fab fa-euro-sign">
+          <p><%= flat.address %></p>
+          <div class="container ">
+           <div >
+            <p><i class="fa fa-users"></i><%= flat.number_of_guests %></p>
+            <p></i><%= flat.price_per_night %> </p>
+          </div>
+        </div>
+      </div>
+      <p><%= link_to "More info", flat_path(flat)  %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div><i class="fab fa-euro-sign"></i>
+<i class="fas fa-euro-sign"></i>
